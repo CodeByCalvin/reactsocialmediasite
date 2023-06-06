@@ -1,17 +1,25 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import "./userpost.css";
+import React, { useState } from "react";
 
-export default function UserPost() {
+export default function UserPost(props) {
+  const [likes, setLikes] = useState(props.likecount || 0);
+
+  const handleLike = () => {
+    setLikes(likes + 1);
+  };
+
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+    <Card className="custom-card" style={{ width: "18rem" }}>
+      <Card.Img className="custom-image" variant="top" src={props.img} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Card.Title className="custom-title">{props.username}</Card.Title>
+        <Card.Text className="custom-text">{props.text}</Card.Text>
+        <Button variant="primary" onClick={() => handleLike()}>
+          Like
+        </Button>
+        <div>{likes}</div>
       </Card.Body>
     </Card>
   );

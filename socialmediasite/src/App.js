@@ -6,7 +6,21 @@ function App() {
   return (
     <div className="App">
       <h1>User posts</h1>
-      <UserPost />
+      <UserPost
+        img="https://picsum.photos/200/300"
+        username="Ben Smith"
+        text="This is a text post blah blah blah"
+      />
+      <UserPost
+        img="https://picsum.photos/200/300"
+        username="Ben Smith"
+        text="This is a text post blah blah blah"
+      />
+      <UserPost
+        img="https://picsum.photos/200/300"
+        username="Ben Smith"
+        text="This is a text post blah blah blah"
+      />
     </div>
   );
 }
