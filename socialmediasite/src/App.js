@@ -1,6 +1,5 @@
 import "./App.css";
 import React from "react";
-import { useEffect } from "react";
 import UserPost from "./components/userpost";
 import { Container, Row, Col, Nav, Navbar } from "react-bootstrap";
 import PostForm from "./components/userInput";
@@ -19,19 +18,19 @@ function App() {
     return (
       <Container fluid>
         <Row>
-          <Col md={8}>
+          <Col md={6}>
             <h1>Welcome to Social Site</h1>
             <h2>Add a post</h2>
             <PostForm handleSubmit={(userPost) => handleSubmit(userPost)} />
           </Col>
-          <Col md={4}>
+          <Col md={6}>
             <h2>User posts</h2>
             <div className="user-posts-container">
               {userPosts.map((userPost, index) => {
                 return (
                   <div key={index} className="mb-4">
                     <UserPost
-                      img={userPost.imgUrl}
+                      img={"https://picsum.photos/200/300"}
                       username={userPost.username}
                       text={userPost.postText}
                     />
@@ -56,7 +55,7 @@ function App() {
                 return (
                   <div key={index} className="mb-4">
                     <UserPost
-                      img={userPost.imgUrl}
+                      img={"https://picsum.photos/200/300"}
                       username={userPost.username}
                       text={userPost.postText}
                     />
