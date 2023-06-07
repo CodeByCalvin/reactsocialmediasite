@@ -1,28 +1,60 @@
 .custom-card {
-  border-radius: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
   margin-bottom: 20px;
+  padding: 15px;
 }
 
 .custom-image {
-  width: 100%;
-  height: 200px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   object-fit: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
 }
 
 .custom-title {
-  font-size: 20px;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .custom-text {
-  font-size: 16px;
   margin-bottom: 10px;
 }
 
-.float-right {
-  float: right;
+.custom-like-button {
+  background-color: transparent;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.custom-like-button:hover {
+  text-decoration: underline;
+}
+
+.custom-like-count {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+@media (max-width: 576px) {
+  .custom-card {
+    padding: 10px;
+  }
+
+  .custom-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .custom-title {
+    font-size: 14px;
+  }
+
+  .custom-text {
+    font-size: 12px;
+  }
 }
