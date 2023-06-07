@@ -39,6 +39,8 @@ export default function UserPost(props) {
                   marginRight: "10px",
                 }}
               >
+                {/* // Always add like/like-button class, if the post has been liked, we want to show a solid icon and add liked/disliked class*/}
+
                 <div style={{ display: "flex", gap: "5px" }}>
                   <button
                     className={`like-button ${

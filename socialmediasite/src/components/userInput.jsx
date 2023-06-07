@@ -4,9 +4,11 @@ import Picker from "@emoji-mart/react";
 import "./userInput.css";
 
 function PostForm({ handleSubmit }) {
+  // Form input
   const [username, setUsername] = React.useState("");
   const [postText, setPostText] = React.useState("");
 
+  // Emoji picker
   const [showPicker, setShowPicker] = React.useState(false);
 
   const togglePicker = () => {
@@ -24,11 +26,12 @@ function PostForm({ handleSubmit }) {
         handleSubmit({ username, postText });
       }}
     >
-      <Form.Group className="mb-3" >
+      <Form.Group className="mb-1" controlId="formBasicEmail">
         <Form.Control
           required
           type="username"
           placeholder="Enter username..."
+          value={username}
           onChange={(e) => {
             setUsername(e.target.value);
           }}
@@ -36,7 +39,7 @@ function PostForm({ handleSubmit }) {
       </Form.Group>
       <hr />
       <br />
-      <Form.Group className="mb-3" >
+      <Form.Group className="mb-1" controlId="formImgUrl">
         <div style={{ display: "flex", alignItems: "center" }}>
           <Form.Control
             className="form-control"
@@ -51,12 +54,36 @@ function PostForm({ handleSubmit }) {
         <Container className="custom-input-container">
           <Row>
             <Col>
-              <Button className="custom-btn" style={{margin: "0 10px 0 0"}} onClick={togglePicker}>😀</Button>
+              <Button
+                className="custom-btn"
+                style={{ margin: "0 10px 0 0" }}
+                onClick={togglePicker}
+              >
+                😀
+              </Button>
             </Col>
             <Col>
               <div className="post-button-container">
-                <Button className="custom-btn" style={{margin: "0 0 0 10px"}} variant="primary" type="submit">Remove Post</Button>
-                <Button className="custom-btn" style={{margin: "0 0 0 10px"}} variant="primary" type="submit">Post</Button>
+                <Button
+                  className="custom-btn"
+                  style={{ margin: "0 0 0 10px" }}
+                  variant="primary"
+                  // Clear all input fields
+                  onClick={() => {
+                    setUsername("");
+                    setPostText("");
+                  }}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  className="custom-btn"
+                  style={{ margin: "0 0 0 10px" }}
+                  variant="primary"
+                  type="submit"
+                >
+                  Post
+                </Button>
               </div>
             </Col>
           </Row>
