@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import React from "react";
+import { Button, Form, Container, Row, Col } from "react-bootstrap";
 import Picker from "@emoji-mart/react";
 import "./userInput.css";
 
@@ -25,37 +24,43 @@ function PostForm({ handleSubmit }) {
         handleSubmit({ username, postText });
       }}
     >
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Username</Form.Label>
+      <Form.Group className="mb-3" >
         <Form.Control
           required
           type="username"
-          placeholder="Enter username"
+          placeholder="Enter username..."
           onChange={(e) => {
             setUsername(e.target.value);
           }}
         />
-        <Form.Text className="text-muted">
-          We'll never share your username with anyone else.
-        </Form.Text>
       </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formPostText">
-        <Form.Label>Attach text to your post</Form.Label>
-
+      <hr />
+      <br />
+      <Form.Group className="mb-3" >
         <div style={{ display: "flex", alignItems: "center" }}>
           <Form.Control
+            className="form-control"
             required
             type="text"
-            placeholder="Post text"
+            placeholder="Add a post..."
             value={postText}
             onChange={(e) => setPostText(e.target.value)}
           />
-          <Button onClick={togglePicker}>😀</Button>
         </div>
-        <Button variant="primary" type="submit">
-          Post
-        </Button>
+        <hr />
+        <Container className="custom-input-container">
+          <Row>
+            <Col>
+              <Button className="custom-btn" style={{margin: "0 10px 0 0"}} onClick={togglePicker}>😀</Button>
+            </Col>
+            <Col>
+              <div className="post-button-container">
+                <Button className="custom-btn" style={{margin: "0 0 0 10px"}} variant="primary" type="submit">Remove Post</Button>
+                <Button className="custom-btn" style={{margin: "0 0 0 10px"}} variant="primary" type="submit">Post</Button>
+              </div>
+            </Col>
+          </Row>
+        </Container>
         <div className="d-flex justify-content-end">
           <div>
             {showPicker && (
