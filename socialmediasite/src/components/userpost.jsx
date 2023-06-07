@@ -10,15 +10,13 @@ import { faThumbsDown as farThumbsDown } from "@fortawesome/free-regular-svg-ico
 import { faThumbsDown as fasThumbsDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function UserPost(props) {
-  const [isLiked, setIsLiked] = useState(false);
-  const [isDisliked, setIsDisliked] = useState(false);
-
+  // Add a state variable to keep track of whether the post has been liked
+  const [likeStatus, setLikeStatus] = useState("none");
   const handleLike = () => {
-    setIsLiked(!isLiked);
+    setLikeStatus(likeStatus === "liked" ? "none" : "liked");
   };
-
   const handleDislike = () => {
-    setIsDisliked(!isDisliked);
+    setLikeStatus(likeStatus === "disliked" ? "none" : "disliked");
   };
 
   return (
@@ -41,19 +39,33 @@ export default function UserPost(props) {
                   marginRight: "10px",
                 }}
               >
-                <Button variant="primary" onClick={handleLike}>
-                  <FontAwesomeIcon icon={isLiked ? fasThumbsUp : farThumbsUp} />{" "}
-                </Button>
-              </div>
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <Button
-                  className="custom-dislike-button"
-                  onClick={() => handleDislike()}
-                >
-                  <FontAwesomeIcon
-                    icon={isDisliked ? fasThumbsDown : farThumbsDown}
-                  />{" "}
-                </Button>
+                <div style={{ display: "flex", gap: "5px" }}>
+                  <button
+                    className={`like-button ${
+                      likeStatus === "liked" ? "liked" : ""
+                    }`}
+                    onClick={handleLike}
+                  >
+                    <FontAwesomeIcon
+                      icon={likeStatus === "liked" ? fasThumbsUp : farThumbsUp}
+                    />{" "}
+                  </button>
+
+                  <button
+                    className={`dislike-button ${
+                      likeStatus === "disliked" ? "disliked" : ""
+                    }`}
+                    onClick={handleDislike}
+                  >
+                    <FontAwesomeIcon
+                      icon={
+                        likeStatus === "disliked"
+                          ? fasThumbsDown
+                          : farThumbsDown
+                      }
+                    />{" "}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
