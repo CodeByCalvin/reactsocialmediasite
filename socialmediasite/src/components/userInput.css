@@ -18,11 +18,35 @@
   padding: 0;
   margin: 10px 0;
 }
+
 .custom-btn {
-  border-radius: 50px;
-  background-color: rgb(29, 29, 29);
+  color: white;
+  background-color: var(--main-color);
+  border-radius: 10px;
   border: none;
+  padding: 5px 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
 }
+
+.custom-btn.emoji {
+  border-radius: 50%;
+}
+
+.custom-btn:hover {
+  background-color: var(--main-color--dark);
+  transform: scale(1.1);
+}
+
+.custom-btn.cancel {
+  background-color: var(--main-color--light);
+}
+
+.custom-btn.cancel:hover {
+  background-color: var(--main-color--dark);
+}
+
 .form-control {
   background-color: transparent;
   border: none;

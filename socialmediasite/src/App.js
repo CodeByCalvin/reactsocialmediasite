@@ -9,6 +9,7 @@ import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Footer from "./components/footer";
+import Logo from "./imgs/Reactrbw.png";
 
 // cool image link https://picsum.photos/200/300
 
@@ -53,9 +54,11 @@ function App() {
         <Row>
           <Col md={6}>
             <div className="post-title-container">
-              <h1 className="title">Welcome to Reactr</h1>
+              <h1 className="title">
+                Reactr<span className="copyright"> ©</span>
+              </h1>
             </div>
-            <h2 className="">Add a post</h2>
+            <h2 className="margin-bottom subtitle">Add a post</h2>
             <PostForm handleSubmit={(userPost) => handleSubmit(userPost)} />
           </Col>
           <Col md={6} className="user-posts-home">
@@ -111,10 +114,10 @@ function App() {
   return (
     <div className="App">
       <HashRouter>
-        <Navbar bg="dark" variant="dark" className="mb-4" id="test">
+        <Navbar variant="dark" className="mb-4 custom-nav-bar" id="navpad">
           <Container fluid className="ml-1 mr-1">
-            <Navbar.Brand href="" className="mr-4 ml-3">
-              Reactr
+            <Navbar.Brand href="" className="mr-4 ml-3 logo">
+              <img src={Logo} alt="Reactr Logo" style={{ width: 50 }} />
             </Navbar.Brand>
             <Nav className="mr-auto">
               <Link to="/" className="nav-link">

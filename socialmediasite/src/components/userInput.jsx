@@ -55,7 +55,7 @@ function PostForm({ handleSubmit }) {
           <Row>
             <Col>
               <Button
-                className="custom-btn"
+                className="custom-btn emoji"
                 style={{ margin: "0 10px 0 0" }}
                 onClick={togglePicker}
               >
@@ -64,10 +64,9 @@ function PostForm({ handleSubmit }) {
             </Col>
             <Col>
               <div className="post-button-container">
-                <Button
-                  className="custom-btn"
+                <button
+                  className="custom-btn cancel"
                   style={{ margin: "0 0 0 10px" }}
-                  variant="primary"
                   // Clear all input fields
                   onClick={() => {
                     setUsername("");
@@ -75,15 +74,14 @@ function PostForm({ handleSubmit }) {
                   }}
                 >
                   Cancel
-                </Button>
-                <Button
+                </button>
+                <button
                   className="custom-btn"
                   style={{ margin: "0 0 0 10px" }}
-                  variant="primary"
                   type="submit"
                 >
                   Post
-                </Button>
+                </button>
               </div>
             </Col>
           </Row>

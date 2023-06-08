@@ -1,9 +1,43 @@
+:root {
+  --main-color: #343a40;
+  --main-color--light: #5e6872;
+  --main-color--dark: #202428;
+  --main-color--white: #dbdbdb;
+}
+
 .App,
 html,
 body {
-  background-color: rgb(219, 219, 219);
+  background-color: var(--main-color-white);
   font-family: "Roboto", sans-serif;
 }
+
+/* Nav Bar */
+
+#navpad {
+  padding: 0 6px !important;
+}
+
+#basic-nav-dropdown {
+  color: rgb(219, 219, 219) !important;
+}
+
+.custom-nav-bar {
+  background-color: var(--main-color);
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+/**/
+
+.copyright {
+  position: relative;
+  top: -16px;
+  font-size: 20px;
+}
+
 .user-posts-container {
   height: 89vh;
   overflow-y: auto;
@@ -18,7 +52,11 @@ body {
 .title {
   font-size: 3rem;
   font-weight: 700;
-  color: rgb(0, 0, 0);
+  color: var(--main-color);
+}
+
+.subtitle {
+  color: var(--main-color);
 }
 
 .dark {
@@ -33,17 +71,6 @@ body {
   border-left: 1px solid rgba(10, 10, 10, 0.4);
 }
 
-/* .dropdown {
-  width: 1000px;
-} */
-
-#basic-nav-dropdown {
-  color: rgb(219, 219, 219) !important;
-}
-
-.dropdown-toggle::after {
-  display: none;
-}
-#test {
-  padding: 0 6px !important;
+.margin-bottom {
+  margin-bottom: 40px;
 }
