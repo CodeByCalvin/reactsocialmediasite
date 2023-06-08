@@ -1,0 +1,32 @@
+.theme-toggle-button {
+  height: auto;
+  background-color: transparent;
+  border: none;
+}
+
+.moon-icon {
+  color: rgb(219, 219, 219);
+  height: 20px;
+  width: 20px;
+}
+button:focus {
+  outline: none;
+}
+
+#navpad {
+  padding: 0 6px !important;
+}
+
+#basic-nav-dropdown {
+  color: rgb(219, 219, 219) !important;
+}
+
+.custom-nav-bar {
+  background-color: var(--main-color);
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+/**/
