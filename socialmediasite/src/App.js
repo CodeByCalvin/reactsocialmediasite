@@ -10,6 +10,9 @@ import "toastr/build/toastr.min.css";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Footer from "./components/footer";
 import Logo from "./imgs/Reactrbw.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon as faSolidMoon } from "@fortawesome/free-solid-svg-icons";
+import { faMoon as faLightMoon } from "@fortawesome/free-regular-svg-icons";
 
 // cool image link https://picsum.photos/200/300
 
@@ -42,6 +45,23 @@ function App() {
   };
 
   const [userPosts, setUserPosts] = React.useState([]);
+  const [theme, setTheme] = React.useState("light");
+
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  const handleToggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
+  React.useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   const handleSubmit = (userInfo) => {
     setUserPosts([...userPosts, userInfo]);
@@ -112,7 +132,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
       <HashRouter>
         <Navbar variant="dark" className="mb-4 custom-nav-bar" id="navpad">
           <Container fluid className="ml-1 mr-1">
@@ -126,6 +146,18 @@ function App() {
               <Link to="/add-post" className="nav-link">
                 Posts
               </Link>
+              {/* TOGGLE BUTTON */}
+              <button
+                className={`theme-toggle-button ${
+                  theme === "dark" ? "dark-theme" : ""
+                }`}
+                onClick={handleToggleTheme}
+              >
+                <FontAwesomeIcon
+                  icon={theme === "dark" ? faSolidMoon : faLightMoon}
+                />
+              </button>
+              <div onClick={toggleTheme}>Toggle Theme</div>
             </Nav>
             <NavDropdown
               title={

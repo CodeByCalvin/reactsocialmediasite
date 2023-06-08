@@ -20,86 +20,88 @@ function PostForm({ handleSubmit }) {
   };
 
   return (
-    <Form
-      onSubmit={(e) => {
-        e.preventDefault();
-        handleSubmit({ username, postText });
-      }}
-    >
-      <Form.Group className="mb-1" controlId="formBasicEmail">
-        <Form.Control
-          required
-          type="username"
-          placeholder="Enter username..."
-          value={username}
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-        />
-      </Form.Group>
-      <hr />
-      <br />
-      <Form.Group className="mb-1" controlId="formImgUrl">
-        <div style={{ display: "flex", alignItems: "center" }}>
+    <div>
+      <Form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit({ username, postText });
+        }}
+      >
+        <Form.Group className="mb-1" controlId="formBasicEmail">
           <Form.Control
-            className="form-control"
             required
-            type="text"
-            placeholder="Add a post..."
-            value={postText}
-            onChange={(e) => setPostText(e.target.value)}
+            type="username"
+            placeholder="Enter username..."
+            value={username}
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
           />
-        </div>
+        </Form.Group>
         <hr />
-        <Container className="custom-input-container">
-          <Row>
-            <Col>
-              <Button
-                className="custom-btn emoji"
-                style={{ margin: "0 10px 0 0" }}
-                onClick={togglePicker}
-              >
-                😀
-              </Button>
-            </Col>
-            <Col>
-              <div className="post-button-container">
-                <button
-                  className="custom-btn cancel"
-                  style={{ margin: "0 0 0 10px" }}
-                  // Clear all input fields
-                  onClick={() => {
-                    setUsername("");
-                    setPostText("");
-                  }}
-                >
-                  Cancel
-                </button>
-                <button
-                  className="custom-btn"
-                  style={{ margin: "0 0 0 10px" }}
-                  type="submit"
-                >
-                  Post
-                </button>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-        <div className="d-flex justify-content-start">
-          <div>
-            {showPicker && (
-              <Picker
-                emojiButtonSize={26}
-                emojiSize={20}
-                emojiButtonRadius={110}
-                onEmojiSelect={handleEmojiSelect}
-              />
-            )}
+        <br />
+        <Form.Group className="mb-1" controlId="formImgUrl">
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Form.Control
+              className="form-control"
+              required
+              type="text"
+              placeholder="Add a post..."
+              value={postText}
+              onChange={(e) => setPostText(e.target.value)}
+            />
           </div>
-        </div>
-      </Form.Group>
-    </Form>
+          <hr />
+          <Container className="custom-input-container">
+            <Row>
+              <Col>
+                <Button
+                  className="custom-btn emoji"
+                  style={{ margin: "0 10px 0 0" }}
+                  onClick={togglePicker}
+                >
+                  😀
+                </Button>
+              </Col>
+              <Col>
+                <div className="post-button-container">
+                  <button
+                    className="custom-btn cancel"
+                    style={{ margin: "0 0 0 10px" }}
+                    // Clear all input fields
+                    onClick={() => {
+                      setUsername("");
+                      setPostText("");
+                    }}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    className="custom-btn"
+                    style={{ margin: "0 0 0 10px" }}
+                    type="submit"
+                  >
+                    Post
+                  </button>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+          <div className="d-flex justify-content-start">
+            <div>
+              {showPicker && (
+                <Picker
+                  emojiButtonSize={26}
+                  emojiSize={20}
+                  emojiButtonRadius={110}
+                  onEmojiSelect={handleEmojiSelect}
+                />
+              )}
+            </div>
+          </div>
+        </Form.Group>
+      </Form>
+    </div>
   );
 }
 
