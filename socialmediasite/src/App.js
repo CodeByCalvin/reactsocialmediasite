@@ -110,9 +110,9 @@ function App() {
   return (
     <div className="App">
       <HashRouter>
-        <Navbar bg="dark" variant="dark" className="mb-4">
-          <Container fluid className="ml-2 mr-2">
-            <Navbar.Brand href="" className="mr-4">
+        <Navbar bg="dark" variant="dark" className="mb-4" id="test">
+          <Container fluid className="ml-1 mr-1">
+            <Navbar.Brand href="" className="mr-4 ml-3">
               Social Site
             </Navbar.Brand>
             <Nav className="mr-auto">
@@ -126,17 +126,17 @@ function App() {
             <NavDropdown
               title={
                 <div className="d-flex align-items-center">
+                  <span className="mr-3">John Smith</span>
                   <img
                     src={"https://picsum.photos/200/300"}
                     alt="Profile"
                     className="profile-image"
                     style={{
-                      width: "30px",
-                      height: "30px",
+                      width: "40px",
+                      height: "40px",
                       borderRadius: "50%",
                     }}
                   />
-                  <span className="ml-2">John Smith</span>
                 </div>
               }
               id="basic-nav-dropdown"

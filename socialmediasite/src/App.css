@@ -44,3 +44,6 @@ body {
 .dropdown-toggle::after {
   display: none;
 }
+#test {
+  padding: 0 6px !important;
+}

@@ -21,7 +21,7 @@ export default function UserPost(props) {
 
   return (
     <div className="card-container">
-      <div className="custom-card">
+      <div className="custom- card">
         <Card.Img className="custom-image" variant="top" src={props.img} />
         <div className="card-body-container">
           <Card.Title className="custom-title">{props.username}</Card.Title>
