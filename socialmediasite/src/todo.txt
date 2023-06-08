@@ -1,2 +1,3 @@
-- Stop user from submitting form without all fields full
-- Add notifications using toastr
+- Stop user from submitting form without all fields full - Done
+- Add notifications using toastr - Done
+- 

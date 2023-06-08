@@ -88,7 +88,7 @@ function PostForm({ handleSubmit }) {
             </Col>
           </Row>
         </Container>
-        <div className="d-flex justify-content-end">
+        <div className="d-flex justify-content-start">
           <div>
             {showPicker && (
               <Picker
