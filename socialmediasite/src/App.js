@@ -7,6 +7,7 @@ import { HashRouter, Route, Routes, Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 // cool image link https://picsum.photos/200/300
 
@@ -122,6 +123,31 @@ function App() {
                 Posts
               </Link>
             </Nav>
+            <NavDropdown
+              title={
+                <div className="d-flex align-items-center">
+                  <img
+                    src={"https://picsum.photos/200/300"}
+                    alt="Profile"
+                    className="profile-image"
+                    style={{
+                      width: "30px",
+                      height: "30px",
+                      borderRadius: "50%",
+                    }}
+                  />
+                  <span className="ml-2">John Smith</span>
+                </div>
+              }
+              id="basic-nav-dropdown"
+              className="dropdown"
+            >
+              <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Help</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
+            </NavDropdown>
           </Container>
         </Navbar>
         <Routes>

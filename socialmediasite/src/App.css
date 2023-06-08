@@ -32,3 +32,15 @@ body {
 .user-posts-home {
   border-left: 1px solid rgba(10, 10, 10, 0.4);
 }
+
+/* .dropdown {
+  width: 1000px;
+} */
+
+#basic-nav-dropdown {
+  color: rgb(219, 219, 219) !important;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
