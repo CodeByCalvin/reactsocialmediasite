@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Footer from "./components/footer";
 
 // cool image link https://picsum.photos/200/300
 
@@ -52,7 +53,7 @@ function App() {
         <Row>
           <Col md={6}>
             <div className="post-title-container">
-              <h1 className="title">Welcome to Social Site</h1>
+              <h1 className="title">Welcome to Reactr</h1>
             </div>
             <h2 className="">Add a post</h2>
             <PostForm handleSubmit={(userPost) => handleSubmit(userPost)} />
@@ -67,7 +68,7 @@ function App() {
                   <div key={index} className="mb-4">
                     <UserPost
                       img={"https://picsum.photos/200/300"}
-                      username={userPost.username}
+                      username={"@" + userPost.username}
                       text={userPost.postText}
                     />
                   </div>
@@ -113,7 +114,7 @@ function App() {
         <Navbar bg="dark" variant="dark" className="mb-4" id="test">
           <Container fluid className="ml-1 mr-1">
             <Navbar.Brand href="" className="mr-4 ml-3">
-              Social Site
+              Reactr
             </Navbar.Brand>
             <Nav className="mr-auto">
               <Link to="/" className="nav-link">
@@ -155,6 +156,7 @@ function App() {
           <Route path="/add-post" element={<AddPost />} />
         </Routes>
       </HashRouter>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,9 @@
+.text-reset {
+  color: #6c757d !important;
+  transition: color 0.2s ease-in-out;
+}
+
+.text-reset:hover {
+  color: black !important;
+  transform: scale(1.05);
+}
