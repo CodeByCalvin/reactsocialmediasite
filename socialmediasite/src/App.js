@@ -1,18 +1,14 @@
 import "./App.css";
 import React from "react";
 import UserPost from "./components/userpost";
-import { Container, Row, Col, Nav, Navbar } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import PostForm from "./components/userInput";
-import { HashRouter, Route, Routes, Link } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Footer from "./components/footer";
-import Logo from "./imgs/Reactrbw.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon as faSolidMoon } from "@fortawesome/free-solid-svg-icons";
-import { faMoon as faLightMoon } from "@fortawesome/free-regular-svg-icons";
+import NavBar from "./components/navbar";
 
 // cool image link https://picsum.photos/200/300
 
@@ -131,67 +127,17 @@ function App() {
     );
   }
 
+  // `App ${theme}`
   return (
-    <div className={`App ${theme}`}>
+    <div className="App">
       <HashRouter>
-        <Navbar variant="dark" className="mb-4 custom-nav-bar" id="navpad">
-          <Container fluid className="ml-1 mr-1">
-            <Navbar.Brand href="" className="mr-4 ml-3 logo">
-              <img src={Logo} alt="Reactr Logo" style={{ width: 50 }} />
-            </Navbar.Brand>
-            <Nav className="mr-auto">
-              <Link to="/" className="nav-link">
-                Home
-              </Link>
-              <Link to="/add-post" className="nav-link">
-                Posts
-              </Link>
-              {/* TOGGLE BUTTON */}
-              <button
-                className={`theme-toggle-button ${
-                  theme === "dark" ? "dark-theme" : ""
-                }`}
-                onClick={handleToggleTheme}
-              >
-                <FontAwesomeIcon
-                  icon={theme === "dark" ? faSolidMoon : faLightMoon}
-                />
-              </button>
-              <div onClick={toggleTheme}>Toggle Theme</div>
-            </Nav>
-            <NavDropdown
-              title={
-                <div className="d-flex align-items-center">
-                  <span className="mr-3">John Smith</span>
-                  <img
-                    src={"https://picsum.photos/200/300"}
-                    alt="Profile"
-                    className="profile-image"
-                    style={{
-                      width: "40px",
-                      height: "40px",
-                      borderRadius: "50%",
-                    }}
-                  />
-                </div>
-              }
-              id="basic-nav-dropdown"
-              className="dropdown"
-            >
-              <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Help</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
-            </NavDropdown>
-          </Container>
-        </Navbar>
+        <NavBar handleToggleTheme={handleToggleTheme} theme={theme} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/add-post" element={<AddPost />} />
         </Routes>
+        <Footer />
       </HashRouter>
-      <Footer />
     </div>
   );
 }

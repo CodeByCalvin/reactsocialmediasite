@@ -23,26 +23,6 @@ body {
 }
 /**/
 
-/* Nav Bar */
-
-#navpad {
-  padding: 0 6px !important;
-}
-
-#basic-nav-dropdown {
-  color: rgb(219, 219, 219) !important;
-}
-
-.custom-nav-bar {
-  background-color: var(--main-color);
-}
-
-.dropdown-toggle::after {
-  display: none;
-}
-
-/**/
-
 .copyright {
   position: relative;
   top: -16px;
