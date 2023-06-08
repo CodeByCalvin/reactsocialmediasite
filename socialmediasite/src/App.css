@@ -12,6 +12,17 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* NIGHT MODE */
+.dark {
+  background-color: #16161d;
+  color: rgb(219, 219, 219);
+}
+.light {
+  background-color: rgb(219, 219, 219);
+  color: #16161d;
+}
+/**/
+
 /* Nav Bar */
 
 #navpad {
@@ -52,21 +63,8 @@ body {
 .title {
   font-size: 3rem;
   font-weight: 700;
-  color: var(--main-color);
 }
 
-.subtitle {
-  color: var(--main-color);
-}
-
-.dark {
-  background-color: #16161d;
-  color: rgb(219, 219, 219);
-}
-.light {
-  background-color: rgb(219, 219, 219);
-  color: #16161d;
-}
 .user-posts-home {
   border-left: 1px solid rgba(10, 10, 10, 0.4);
 }
