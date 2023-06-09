@@ -15,12 +15,13 @@
 - **Like/Dislike button**: Each post has a dynamic like/dislike button which allows users to like OR dislike the video
 - **React and Bootstrap**: Built using the power of React and Bootstrap for a modern, responsive design.
 
-## Technologies Used
+## Technologies/Libraries Used
 
 - React
-- Toastr Notification library
-- Bootstrap
+- Bootstrap 5
 - CSS
+- Toastr Notification library
+- FortAwesome (logos)
 
 ## Upcoming Features
 
