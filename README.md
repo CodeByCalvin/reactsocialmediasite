@@ -1,6 +1,6 @@
-# React Social Media Site 💬
+# Reactr - Social Media Site 💬
 
-<strong>Welcome to the GitHub repository for the React Social Media Site! This project is a social media site built from scratch using React and Bootstrap. It showcases user posts and allows the addition of new posts through a form.</strong>
+<strong>Welcome to the GitHub repository for the Reactr Social Media Site! This project is a social media site built from scratch using React and Bootstrap. It showcases user posts and allows the addition of new posts through a form.</strong>
 
 <!-- **[Live demo](#)** Update the link here when the live demo is available -->
 
@@ -8,22 +8,23 @@
 
 ## Features
 
-- **User Posts**: View posts from various users, complete with user's name, image, and text.
-- **Post Form**: Add a new post through a form input.
-- **Like Counter**: Each post has a like counter that increments when the like button is clicked.
-- **Image URL and Post Text Submission**: Enhance the post form to allow users to add an image URL and post text to their posts.
+- **User Posts**: View posts complete with the user's name, image, text and the date/time of posting.
+- **Dark Mode Toggle**: Use the inbuilt toggle button to switch between dark mode and light mode
+- **Emoji Picker**: Pick the right emoji for your post.
+- **Post Form**: Add a new post through a form input, inputting your username and text
+- **Like/Dislike button**: Each post has a dynamic like/dislike button which allows users to like OR dislike the video
 - **React and Bootstrap**: Built using the power of React and Bootstrap for a modern, responsive design.
 
 ## Technologies Used
 
 - React
+- Toastr Notification library
 - Bootstrap
 - CSS
 
 ## Upcoming Features
 
 - **Comments**: Allow users to add comments to posts.
-- **User Profile Pages**: Implement user profile pages to showcase individual user's posts.
 
 ## Contribution
 
@@ -33,6 +34,7 @@ Contributions, issues, and feature requests are welcome. Feel free to check [iss
 
 Github: [@CodeByCalvin](https://github.com/CodeByCalvin)
 <br>Github: [@ellioht](https://github.com/ellioht)
+<br>Github: [@Paul-AH01](https://github.com/Paul-AH01)
 
 ## Show Your Support
 
