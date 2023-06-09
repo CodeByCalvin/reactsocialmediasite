@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon as faLightMoon } from "@fortawesome/free-regular-svg-icons";
 import { faMoon as faSolidMoon } from "@fortawesome/free-solid-svg-icons";
-import Logo from "../imgs/Reactr.png";
+import Logo from "../imgs/Reactrbw.png";
 import "./navbar.css";
 
 export default function NavBar({ handleToggleTheme, theme }) {

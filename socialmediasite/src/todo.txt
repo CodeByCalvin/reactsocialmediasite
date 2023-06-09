@@ -1,4 +1,4 @@
 - Stop user from submitting form without all fields full - Done
 - Add notifications using toastr - Done
-- Profile Dropdown
-- Light/Dark toggle
+- Profile Dropdown - Done
+- Light/Dark toggle - Done
