@@ -9,10 +9,12 @@
 ## Features
 
 - **User Posts**: View posts complete with the user's name, image, text and the date/time of posting.
-- **Dark Mode Toggle**: Use the inbuilt toggle button to switch between dark mode and light mode
+- **Remove button**: Each post has a remove button allowing the user to delete selected posts.
+- **Notification system**: We have built notifications that update the user with either a successful post or the deletion of a post.
+- **Dark Mode Toggle**: Use the inbuilt toggle button to switch between dark mode and light mode.
 - **Emoji Picker**: Pick the right emoji for your post.
 - **Post Form**: Add a new post through a form input, inputting your username and text
-- **Like/Dislike button**: Each post has a dynamic like/dislike button which allows users to like OR dislike the video
+- **Like/Dislike button**: Each post has a dynamic like/dislike button which allows users to like OR dislike the post.
 - **React and Bootstrap**: Built using the power of React and Bootstrap for a modern, responsive design.
 
 ## Technologies/Libraries Used
