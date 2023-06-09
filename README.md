@@ -2,9 +2,10 @@
 
 <strong>Welcome to the GitHub repository for the Reactr Social Media Site! This project is a social media site built from scratch using React and Bootstrap. It showcases user posts and allows the addition of new posts through a form.</strong>
 
-<!-- **[Live demo](#)** Update the link here when the live demo is available -->
+**[Live demo](https://codebycalvin.github.io/reactsocialmediasite/)** 
 
-<!-- Include some screenshots of your project here -->
+![Homepage of Reactr](https://i.imgur.com/wPT19iD.png)
+
 
 ## Features
 
