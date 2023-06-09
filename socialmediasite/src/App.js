@@ -60,8 +60,24 @@ function App() {
   }, [theme]);
 
   const handleSubmit = (userInfo) => {
-    setUserPosts([...userPosts, userInfo]);
+    const postsWithId = { ...userInfo, id: Math.random() * 1000 };
+    const newPosts = [...userPosts, postsWithId];
+    localStorage.setItem("list", JSON.stringify(newPosts));
+    setUserPosts(newPosts);
+
     toastr["success"]("Post submitted", "Success");
+  };
+
+  React.useEffect(() => {
+    const list = localStorage.getItem("list");
+    setUserPosts(JSON.parse(list) || []);
+  }, []);
+
+  const closePost = (id) => {
+    const filteredPosts = userPosts.filter((post) => post.id !== id);
+    setUserPosts(filteredPosts);
+    localStorage.setItem("list", JSON.stringify(filteredPosts));
+    toastr["error"]("Post deleted", "Removed");
   };
 
   function Home() {
@@ -87,8 +103,10 @@ function App() {
                   <div key={index} className="mb-4">
                     <UserPost
                       img={"https://picsum.photos/200/300"}
+                      id={userPost.id}
                       username={"@" + userPost.username}
                       text={userPost.postText}
+                      closePost={closePost}
                     />
                   </div>
                 );
@@ -114,8 +132,10 @@ function App() {
                   <div key={index} className="mb-4">
                     <UserPost
                       img={"https://picsum.photos/200/300"}
+                      id={userPost.id}
                       username={userPost.username}
                       text={userPost.postText}
+                      closePost={closePost}
                     />
                   </div>
                 );
