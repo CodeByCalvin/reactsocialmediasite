@@ -29,6 +29,10 @@ body {
   font-size: 20px;
 }
 
+.homepage-container {
+  height: 10px;
+}
+
 .user-posts-container {
   height: 89vh;
   overflow-y: auto;
@@ -47,6 +51,8 @@ body {
 
 .user-posts-home {
   border-left: 1px solid rgba(10, 10, 10, 0.4);
+  max-height: calc(100vh - 350px);
+  overflow-y: auto;
 }
 
 .margin-bottom {
